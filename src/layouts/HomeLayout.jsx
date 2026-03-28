@@ -12,18 +12,18 @@ const HomeLayout = () => {
         <div>
             <header>
                 <Header></Header>
-                <section className='w-10/12 mx-auto my-3'>
+                <section className='w-11/12 lg:w-10/12 mx-auto my-3'>
                     <LatestNews></LatestNews>
                 </section>
-                <nav className='w-10/12 mx-auto my-3'>
+                <nav className='w-11/12 lg:w-10/12 mx-auto my-3'>
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main className='w-10/12 mx-auto my-3 grid grid-cols-4'>
+            <main className='w-11/12 lg:w-10/12 mx-auto my-3 grid grid-cols-1 lg:grid-cols-4'>
                 <aside>
                     <LeftAside></LeftAside>
                 </aside>
-                <section className="main col-span-2 mx-4">
+                <section className="main col-span-2 lg:mx-4">
                     <Outlet></Outlet>
                 </section>
                 <aside>
