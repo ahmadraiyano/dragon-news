@@ -1,4 +1,10 @@
-import { FaStar, FaRegBookmark, FaShareAlt, FaEye, FaFire } from "react-icons/fa";
+import {
+  FaStar,
+  FaRegBookmark,
+  FaShareAlt,
+  FaEye,
+  FaFire,
+} from "react-icons/fa";
 
 const NewsCard = ({ news }) => {
   const {
@@ -12,11 +18,14 @@ const NewsCard = ({ news }) => {
     details,
   } = news;
 
-  const publishedDate = new Date(author.published_date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const publishedDate = new Date(author.published_date).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    },
+  );
 
   return (
     <div className="card bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300 border border-base-200 rounded-2xl overflow-hidden w-full">
@@ -29,7 +38,9 @@ const NewsCard = ({ news }) => {
             </div>
           </div>
           <div>
-            <p className="font-semibold text-sm text-base-content leading-tight">{author.name}</p>
+            <p className="font-semibold text-sm text-base-content leading-tight">
+              {author.name}
+            </p>
             <p className="text-xs text-base-content/50">{publishedDate}</p>
           </div>
         </div>
@@ -59,6 +70,7 @@ const NewsCard = ({ news }) => {
             alt={title}
             className="absolute inset-0 w-full h-full object-cover rounded-xl"
             onError={(e) => {
+              e.target.onerror = null;
               e.target.src = "https://placehold.co/600x400?text=No+Image";
             }}
           />
@@ -81,7 +93,9 @@ const NewsCard = ({ news }) => {
       <div className="px-4 pt-2 text-sm text-base-content/70 leading-relaxed">
         <p>
           {details.slice(0, 180)}...{" "}
-          <button className="text-error font-semibold hover:underline cursor-pointer">Read More</button>
+          <button className="text-error font-semibold hover:underline cursor-pointer">
+            Read More
+          </button>
         </p>
       </div>
 
@@ -112,7 +126,9 @@ const NewsCard = ({ news }) => {
             <FaStar
               key={i}
               size={14}
-              className={i < Math.round(rating.number) ? "text-warning" : "text-base-300"}
+              className={
+                i < Math.round(rating.number) ? "text-warning" : "text-base-300"
+              }
             />
           ))}
           <span className="text-xs font-semibold text-base-content/70 ml-1">
@@ -123,7 +139,9 @@ const NewsCard = ({ news }) => {
         {/* Views */}
         <div className="flex items-center gap-1.5 text-base-content/50">
           <FaEye size={14} />
-          <span className="text-xs font-medium">{total_view.toLocaleString()}</span>
+          <span className="text-xs font-medium">
+            {total_view.toLocaleString()}
+          </span>
         </div>
       </div>
     </div>
