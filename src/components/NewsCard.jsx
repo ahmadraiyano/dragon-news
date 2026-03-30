@@ -5,9 +5,11 @@ import {
   FaEye,
   FaFire,
 } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     rating,
     total_view,
@@ -93,9 +95,9 @@ const NewsCard = ({ news }) => {
       <div className="px-4 pt-2 text-sm text-base-content/70 leading-relaxed">
         <p>
           {details.slice(0, 180)}...{" "}
-          <button className="text-error font-semibold hover:underline cursor-pointer">
+          <Link to={`/news-details/${id}`} className="text-error font-semibold hover:underline cursor-pointer">
             Read More
-          </button>
+          </Link>
         </p>
       </div>
 
